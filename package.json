@@ -1,0 +1,16 @@
+{
+  "name": "realty-staff-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^7.1.11",
+    "jquery": "^3.4.1",
+    "mysql": "^2.18.1"
+  }
+}
