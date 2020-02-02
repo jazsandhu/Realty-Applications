@@ -5,10 +5,10 @@ const path = require('path');
 let win;
 
 function createWindow() {
-    win = new BrowserWindow({show: false});
+    win = new BrowserWindow({ show: false, webPreferences: { nodeIntegration: true } });
     win.maximize();
     win.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, 'contacts.html'),
         protocol: 'file:',
         slashes: true
     }));
