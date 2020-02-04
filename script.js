@@ -1,42 +1,39 @@
 var $ = require('jquery');
 var mysql = require('mysql');
+const { ipcMain: ipc } = require('electron');
 
 $(document).ready(function () {
     $('#jquery_check').hide();
+
+    //star rating
+    $('input').rating({
+        filled: 'glyphicon glyphicon-heart',
+        empty: 'glyphicon glyphicon-heart-empty'
+    });
+
+    $('.callContactCard').click(function () {
+        $('#exampleModal').modal('show')
+    });
 });
 
 
 // Add the credentials to access your database
 var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : null, // or the original password : 'apaswword'
-    database : 'ourcodeworld-database'
+    host: "localhost",
+    user: "root",
+    password: "442918",
+    database: "realtygroup"
 });
 
 // connect to mysql
-connection.connect(function(err) {
-    // in case of error
-    if(err){
-        console.log(err.code);
-        console.log(err.fatal);
-    }
+connection.connect(function (err) {
+    if (err) throw err;
+    console.log("Connected!");
 });
 
 // Perform a query
-$query = 'SELECT * FROM `myTableName` LIMIT 10';
-
-connection.query($query, function(err, rows, fields) {
-    if(err){
-        console.log("An error ocurred performing the query.");
-        console.log(err);
-        return;
-    }
-
+$query = 'SELECT * FROM `contacts` LIMIT 10';
+connection.query($query, function (err, rows, fields) {
+    if (err) throw err;
     console.log("Query succesfully executed", rows);
-});
-
-// Close the connection
-connection.end(function(){
-    // The connection has been closed
 });
