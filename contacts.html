@@ -2,210 +2,70 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Canadian Real Estate</title>
+	<meta charset="UTF-8">
+	<title>Canadian Real Estate</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <link href="dist/css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" src="dist/js/jquery-1.10.2.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://use.fontawesome.com/e5d43978c4.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384- 
+ fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="contacts.html">Contacts<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="hotlist.html">Hot List</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contactcard.html">Contact Card</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg">
-                <h4>Contacts</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg">
-                <p id="jquery_check">Jquery not working</p>
-            </div>
-        </div>
-        <table class="table table-bordered table-hover table-sm">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Brokerage/Office</th>
-                    <th scope="col">Request</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="callContactCard" data-toggle="modal" data-target="#myModal">
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>123456789</td>
-                    <td>Client</td>
-                    <td></td>
-                    <td>Looking for a home</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>123456789</td>
-                    <td>Client</td>
-                    <td></td>
-                    <td>also wanting to clarify details...</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Laura</td>
-                    <td>Nguyen</td>
-                    <td>9876543210</td>
-                    <td>Client</td>
-                    <td></td>
-                    <td>Request text</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Jon</td>
-                    <td>Williams</td>
-                    <td>11122233333</td>
-                    <td>Agent</td>
-                    <td>Remax</td>
-                    <td>Request text</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Laura</td>
-                    <td>Nguyen</td>
-                    <td>9876543210</td>
-                    <td>Client</td>
-                    <td></td>
-                    <td>Request text</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Jon</td>
-                    <td>Williams</td>
-                    <td>11122233333</td>
-                    <td>Agent</td>
-                    <td>Remax</td>
-                    <td>Request text</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Contact Card</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <h5 class="text-left"><span class="badge badge-success">Client</span></h5>
-                            </div>
-                            <div class="col">
-                                <div class="container">
-                                    <div class="rate">
-                                        <input type="radio" id="star5" name="rate" value="5" />
-                                        <label for="star5" title="text">5 stars</label>
-                                        <input type="radio" id="star4" name="rate" value="4" />
-                                        <label for="star4" title="text">4 stars</label>
-                                        <input type="radio" id="star3" name="rate" value="3" />
-                                        <label for="star3" title="text">3 stars</label>
-                                        <input type="radio" id="star2" name="rate" value="2" />
-                                        <label for="star2" title="text">2 stars</label>
-                                        <input type="radio" id="star1" name="rate" value="1" />
-                                        <label for="star1" title="text">1 star</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <h5 class="text-right"><span class="badge badge-info">Visits</span></h5>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col">
-                                <i class="font-weight-light">First Name</i><br>
-                                Jaz
-                            </div>
-                            <div class="col">
-                                <i class="font-weight-light">Last Name</i><br>
-                                Sandhu
-                            </div>
-                            <div class="col">
-                                <i class="font-weight-light">Phone</i><br>
-                                6474023679
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-12">
-                                <i class="font-weight-light">Emails</i>
-                            </div>
-                            <div class="col">
-                                jaz.sandhu119@gmail.com
-                            </div>
-                            <div class="col">
-                                dragon_slayer_119@hotmail.com
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col">
-                                <i class="font-weight-light">Brokerage Name</i><br>
-                                Canadian Real Estate Group
-                            </div>
-                            <div class="col">
-                                <i class="font-weight-light">Office Phone</i><br>
-                                1234567890
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-sm">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="dashboard.html">Dashboard</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="contacts.html">Contacts</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="hotlist.html">Hot List</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+	<br>
+	<div class="container-fluid">
+		<table class="table table-hover table-light">
+			<thead class='thead-dark'>
+				<tr>
+					<th scope="col">Visits</th>
+					<th scope="col">First Name</th>
+					<th scope="col">Last Name</th>
+					<th scope="col">Phone Number</th>
+					<th scope="col">Broker</th>
+					<th scope="col">Appointment</th>
+					<th scope="col">Meeting With</th>
+					<th scope="col">Project</th>
+				</tr>
+			</thead>
+			<tbody id="tbody_content"></tbody>
+		</table>
+	</div>
 </body>
 
-<script src="./script.js"></script>
-<script src="js/addons/rating.js"></script>
+<script src="./scripts/startup.js"></script>
+<script src="./scripts/load_lists.js"></script>
+<script src="./scripts/list_modals.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/e5d43978c4.js"></script>
 
 </html>

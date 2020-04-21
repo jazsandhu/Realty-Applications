@@ -2,112 +2,308 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Canadian Real Estate</title>
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Canadian Real Estate</title>
+
+	<script src="https://use.fontawesome.com/e5d43978c4.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384- 
+ fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body id="body">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="contacts.html">Contacts<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="hotlist.html">Hot List</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contactcard.html">Contact Card</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg">
-                <h4>Hot List</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg">
-                <p id="jquery_check">Jquery not working</p>
-            </div>
-        </div>
-        <table class="table table-bordered table-hover table-sm">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Brokerage/Office</th>
-                    <th scope="col">Request</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>123456789</td>
-                    <td>Client</td>
-                    <td></td>
-                    <td>Looking for a home</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>123456789</td>
-                    <td>Client</td>
-                    <td></td>
-                    <td>also wanting to clarify details...</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Laura</td>
-                    <td>Nguyen</td>
-                    <td>9876543210</td>
-                    <td>Client</td>
-                    <td></td>
-                    <td>Request text</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Jon</td>
-                    <td>Williams</td>
-                    <td>11122233333</td>
-                    <td>Agent</td>
-                    <td>Remax</td>
-                    <td>Request text</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Laura</td>
-                    <td>Nguyen</td>
-                    <td>9876543210</td>
-                    <td>Client</td>
-                    <td></td>
-                    <td>Request text</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Jon</td>
-                    <td>Williams</td>
-                    <td>11122233333</td>
-                    <td>Agent</td>
-                    <td>Remax</td>
-                    <td>Request text</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-sm">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="dashboard.html">Dashboard</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contacts.html">Contacts</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="hotlist.html">Hot List</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+	<br>
+	<div class="container-fluid">
+		<table class="table table-hover table-light">
+			<thead class='thead-dark'>
+				<tr>
+					<th scope="col">Lead Temperature</th>
+					<th scope="col">Visits</th>
+					<th scope="col">First Name</th>
+					<th scope="col">Last Name</th>
+					<th scope="col">Phone Number</th>
+					<th scope="col">Time of Registration</th>
+					<th scope="col">Project</th>
+					<th scope="col">Lead Source</th>
+				</tr>
+			</thead>
+			<tbody id="tbody_hot_list"></tbody>
+		</table>
+	</div>
+
+	<!--Modal-->
+	<div class="modal fade bd-example-modal-lg" id="contact_card" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Contact Card</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<h5 id="broker_cc"></h5>
+							</div>
+							<div class="col">
+								<div class="container text-center">
+									<i id="fire1C"></i>
+									<i id="fire2C"></i>
+									<i id="fire3C"></i>
+								</div>
+							</div>
+							<div value="0" id="fire-rating-C" hidden></div>
+							<div class="col">
+								<h5 id="visits_cc"></h5>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col">
+								<i class="font-weight-light">First Name</i><br>
+								<span id="first_name_cc"></span>
+							</div>
+							<div class="col">
+								<i class="font-weight-light">Last Name</i><br>
+								<span id="last_name_cc"></span>
+							</div>
+							<div class="col">
+								<i class="font-weight-light">Phone</i><br>
+								<span id="phone_number_cc"></span>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-12">
+								<i class="font-weight-light">Emails</i>
+							</div>
+							<div class="col">
+								jaz.sandhu119@gmail.com
+							</div>
+							<div class="col">
+								dragon_slayer_119@hotmail.com
+							</div>
+						</div>
+						<hr>
+						<div class="row broker_info">
+							<div class="col">
+								<i class="font-weight-light">Brokerage Name</i><br>
+								<span id="brokerage_name_cc"></span>
+							</div>
+							<div class="col">
+								<i class="font-weight-light">Office Phone</i><br>
+								<span id="office_phone_number_cc"></span>
+							</div>
+						</div>
+						<hr class="broker_info">
+						<div class="row">
+							<div class="col text-center">
+								<button type="button" class="btn btn-outline-info">Log History</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<i class="font-weight-light">Client Comment</i>
+								<span class="badge badge-light float-right">Timestamp</span>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+									readonly></textarea>
+							</div>
+						</div>
+						<br>
+						<form>
+							<div class="form-group">
+								<i class="font-weight-light">Client Log</i>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+							</div>
+							<hr class="client_info">
+							<div class="form-group client_info">
+								<div class="row">
+									<div class="col">
+										<label for="exampleFormControlSelect1"><i class="font-weight-light">Change Lead
+												Tempreature</i></label>
+									</div>
+									<div class="col">
+										<select class="form-control" id="exampleFormControlSelect1">
+											<option>-</option>
+											<option>0 (not interested)</option>
+											<option>1 (requesting details)</option>
+											<option>2 (interested but not sure)</option>
+											<option>3 (ready to go)</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<hr class="client_info">
+							<div class="form-group client_info">
+								<div class="row">
+									<!--home/property-->
+									<div class="col">
+										<label for="exampleFormControlSelect1"><i
+												class="font-weight-light">Home/Property</i></label>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="home_single">
+											<label class="form-check-label" for="home_single">
+												Single
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="home_semi">
+											<label class="form-check-label" for="home_semi">
+												Semi
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="home_town">
+											<label class="form-check-label" for="home_town">
+												Townhouse
+											</label>
+										</div>
+									</div>
+									<!--size-->
+									<div class="col">
+										<label for="exampleFormControlSelect1"><i
+												class="font-weight-light">Size</i></label>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="size1">
+											<label class="form-check-label" for="size1">
+												1,000 - 1,500
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="size2">
+											<label class="form-check-label" for="size2">
+												1,500 - 2,000
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="size3">
+											<label class="form-check-label" for="size3">
+												2,000 - 2,500
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="size4">
+											<label class="form-check-label" for="size4">
+												2,500 - 3,000
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="size5">
+											<label class="form-check-label" for="size5">
+												3,000 - 3,500
+											</label>
+										</div>
+									</div>
+									<!--Price Range-->
+									<div class="col">
+										<label for="exampleFormControlSelect1"><i class="font-weight-light">Price
+												Range</i></label>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="pricerange1">
+											<label class="form-check-label" for="pricerange1">
+												Under 500k
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="pricerange2">
+											<label class="form-check-label" for="pricerange2">
+												500k - 650k
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="pricerange3">
+											<label class="form-check-label" for="pricerange3">
+												650k - 800k
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="pricerange4">
+											<label class="form-check-label" for="pricerange4">
+												800k - 950k
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="pricerange5">
+											<label class="form-check-label" for="pricerange5">
+												950k and up
+											</label>
+										</div>
+									</div>
+									<!--Geographic Area of Interest-->
+									<div class="col">
+										<label for="exampleFormControlSelect1"><i class="font-weight-light">Area of
+												Interest</i></label>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="GTAcore">
+											<label class="form-check-label" for="GTAcore">
+												GTA Core
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="GTAnorth">
+											<label class="form-check-label" for="GTAnorth">
+												GTA North
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="GTAwest">
+											<label class="form-check-label" for="GTAwest">
+												GTA West
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
 
-<script src="./script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/e5d43978c4.js"></script>
+<script src="./scripts/startup.js"></script>
+<script src="./scripts/load_lists.js"></script>
+<script src="./scripts/list_modals.js"></script>
 
 </html>
