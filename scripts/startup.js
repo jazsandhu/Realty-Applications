@@ -8,8 +8,8 @@ var connection = mysql.createPool({
     port: 3306,
     password: "----",
     database: "----",
-    connectionLimit : 10,               // this is the max number of connections before your pool starts waiting for a release
-    multipleStatements : true           // I like this because it helps prevent nested sql statements, it can be buggy though, so be careful
+    connectionLimit : 10,
+    multipleStatements : true
 });
 
 //connect to mysql
