@@ -11,7 +11,7 @@
   "dependencies": {
     "electron": "^7.1.11",
     "electron-window-manager": "^1.0.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "mysql": "^2.18.1"
   }
